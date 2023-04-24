@@ -1,4 +1,4 @@
-﻿namespace Programa_1._10
+﻿namespace Programa_2._9
 {
     partial class Form1
     {
@@ -28,49 +28,75 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMensaje = new System.Windows.Forms.Label();
-            this.btnForma2 = new System.Windows.Forms.Button();
-            this.lblContenido = new System.Windows.Forms.Label();
+            this.lstFrutas = new System.Windows.Forms.ListBox();
+            this.txtFruta = new System.Windows.Forms.TextBox();
+            this.btnAdicionar = new System.Windows.Forms.Button();
+            this.lblFruta = new System.Windows.Forms.Label();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblMensaje
+            // lstFrutas
             // 
-            this.lblMensaje.AutoSize = true;
-            this.lblMensaje.Location = new System.Drawing.Point(13, 13);
-            this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(151, 13);
-            this.lblMensaje.TabIndex = 0;
-            this.lblMensaje.Text = "========================";
+            this.lstFrutas.FormattingEnabled = true;
+            this.lstFrutas.Items.AddRange(new object[] {
+            "Manzana",
+            "Mora",
+            "Pera"});
+            this.lstFrutas.Location = new System.Drawing.Point(4, 102);
+            this.lstFrutas.Name = "lstFrutas";
+            this.lstFrutas.Size = new System.Drawing.Size(300, 95);
+            this.lstFrutas.TabIndex = 0;
+            this.lstFrutas.SelectedIndexChanged += new System.EventHandler(this.lstFrutas_SelectedIndexChanged);
             // 
-            // btnForma2
+            // txtFruta
             // 
-            this.btnForma2.Location = new System.Drawing.Point(231, 13);
-            this.btnForma2.Name = "btnForma2";
-            this.btnForma2.Size = new System.Drawing.Size(86, 23);
-            this.btnForma2.TabIndex = 1;
-            this.btnForma2.Text = "Abrir Forma 2";
-            this.btnForma2.UseVisualStyleBackColor = true;
-            this.btnForma2.Click += new System.EventHandler(this.btnForma2_Click);
+            this.txtFruta.Location = new System.Drawing.Point(13, 26);
+            this.txtFruta.Name = "txtFruta";
+            this.txtFruta.Size = new System.Drawing.Size(100, 20);
+            this.txtFruta.TabIndex = 1;
             // 
-            // lblContenido
+            // btnAdicionar
             // 
-            this.lblContenido.AutoSize = true;
-            this.lblContenido.Location = new System.Drawing.Point(13, 57);
-            this.lblContenido.Name = "lblContenido";
-            this.lblContenido.Size = new System.Drawing.Size(35, 13);
-            this.lblContenido.TabIndex = 2;
-            this.lblContenido.Text = "label1";
+            this.btnAdicionar.Location = new System.Drawing.Point(164, 22);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionar.TabIndex = 2;
+            this.btnAdicionar.Text = "Adicionar";
+            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            // 
+            // lblFruta
+            // 
+            this.lblFruta.AutoSize = true;
+            this.lblFruta.Location = new System.Drawing.Point(12, 73);
+            this.lblFruta.Name = "lblFruta";
+            this.lblFruta.Size = new System.Drawing.Size(35, 13);
+            this.lblFruta.TabIndex = 3;
+            this.lblFruta.Text = "label1";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(164, 52);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 264);
-            this.Controls.Add(this.lblContenido);
-            this.Controls.Add(this.btnForma2);
-            this.Controls.Add(this.lblMensaje);
+            this.ClientSize = new System.Drawing.Size(316, 306);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.lblFruta);
+            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.txtFruta);
+            this.Controls.Add(this.lstFrutas);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -78,9 +104,11 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblMensaje;
-        private System.Windows.Forms.Button btnForma2;
-        private System.Windows.Forms.Label lblContenido;
+        private System.Windows.Forms.ListBox lstFrutas;
+        private System.Windows.Forms.TextBox txtFruta;
+        private System.Windows.Forms.Button btnAdicionar;
+        private System.Windows.Forms.Label lblFruta;
+        private System.Windows.Forms.Button btnEliminar;
     }
 }
 
