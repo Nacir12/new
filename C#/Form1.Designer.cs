@@ -1,4 +1,4 @@
-﻿namespace Programa_1._1
+﻿namespace Programa_1._2
 {
     partial class Form1
     {
@@ -28,52 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSaludo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
             this.LblMensaje = new System.Windows.Forms.Label();
-            this.btnDespedida = new System.Windows.Forms.Button();
+            this.btnSaludo = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnSaludo
+            // label1
             // 
-            this.btnSaludo.Location = new System.Drawing.Point(262, 68);
-            this.btnSaludo.Name = "btnSaludo";
-            this.btnSaludo.Size = new System.Drawing.Size(75, 23);
-            this.btnSaludo.TabIndex = 0;
-            this.btnSaludo.Text = "Saludo";
-            this.btnSaludo.UseVisualStyleBackColor = true;
-            this.btnSaludo.Click += new System.EventHandler(this.btnSaludo_Click);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(22, 59);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Nombre:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(75, 56);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.TabIndex = 1;
             // 
             // LblMensaje
             // 
             this.LblMensaje.AutoSize = true;
-            this.LblMensaje.Location = new System.Drawing.Point(33, 73);
+            this.LblMensaje.Location = new System.Drawing.Point(34, 93);
             this.LblMensaje.Name = "LblMensaje";
             this.LblMensaje.Size = new System.Drawing.Size(35, 13);
-            this.LblMensaje.TabIndex = 1;
-            this.LblMensaje.Text = "label1";
+            this.LblMensaje.TabIndex = 2;
+            this.LblMensaje.Text = "label2";
             // 
-            // btnDespedida
+            // btnSaludo
             // 
-            this.btnDespedida.Location = new System.Drawing.Point(262, 110);
-            this.btnDespedida.Name = "btnDespedida";
-            this.btnDespedida.Size = new System.Drawing.Size(75, 23);
-            this.btnDespedida.TabIndex = 2;
-            this.btnDespedida.Text = "Despedida";
-            this.btnDespedida.UseVisualStyleBackColor = true;
-            this.btnDespedida.Click += new System.EventHandler(this.btnDespedida_Click);
+            this.btnSaludo.Location = new System.Drawing.Point(203, 53);
+            this.btnSaludo.Name = "btnSaludo";
+            this.btnSaludo.Size = new System.Drawing.Size(75, 23);
+            this.btnSaludo.TabIndex = 3;
+            this.btnSaludo.Text = "Saludo";
+            this.btnSaludo.UseVisualStyleBackColor = true;
+            this.btnSaludo.Click += new System.EventHandler(this.btnSaludo_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 189);
-            this.Controls.Add(this.btnDespedida);
-            this.Controls.Add(this.LblMensaje);
+            this.ClientSize = new System.Drawing.Size(338, 133);
             this.Controls.Add(this.btnSaludo);
+            this.Controls.Add(this.LblMensaje);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Programa 1.1";
+            this.Text = "Programa 1.2";
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Click += new System.EventHandler(this.Form1_Click);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -81,9 +88,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnSaludo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label LblMensaje;
-        private System.Windows.Forms.Button btnDespedida;
+        private System.Windows.Forms.Button btnSaludo;
     }
 }
 
