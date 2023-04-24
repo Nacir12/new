@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Programa_4._9
+namespace Programa_5._9
 {
     public partial class Form1 : Form
     {
@@ -17,41 +17,28 @@ namespace Programa_4._9
             InitializeComponent();
         }
 
-        private void btnAbrirNotepad_Click(object sender, EventArgs e)
+        private void Form1_Paint(object sender, PaintEventArgs e)
         {
-            //Permite recibir eventos del notepad
-            prcNotepad.EnableRaisingEvents = true;
+            Graphics g = e.Graphics;
 
-            //Arrancamos el proces
-            prcNotepad.Start();
+            ///Curva cerrada y rellena con la brocha
+            Point[] puntos = { new Point(30, 45), new Point(110, 75), new Point(175, 200), };
+            g.FillClosedCurve(Brushes.Aquamarine, puntos);
 
-            lblEstado.Text = "Notepad arrancado";
-        }
+            ///Elipse rellena
+            g.FillEllipse(Brushes.BlueViolet, new Rectangle(75, 30, 100, 25));
 
-        private void btnCerrarNotepad_Click(object sender, EventArgs e)
-        {
-            prcNotepad.Kill();
-        }
+            ///Grafica de pie rellena
+            g.FillPie(Brushes.Blue, new Rectangle(100, 100, 100, 100),45, 120);
 
-        private void prcNotepad_Exited(object sender, EventArgs e)
-        {
-            
-            //Evento de cuando se cierra la forma
-            lblEstado.Text = "Notepad cerrado";
+            ///Dibujamos poligono relleno
+            Point[] puntos2 = { new Point(20, 145), new Point(150, 75), new Point(200, 220), };
+            g.FillPolygon(Brushes.DarkKhaki, puntos2);
 
-            notifyIcon1.ShowBalloonTip(100, "Alert", "Notepad cerrado", ToolTipIcon.Info);
-        }
+            ///Dibujamos rectangulo relleno
+            g.FillRectangle(Brushes.DarkOliveGreen, new Rectangle(150, 100, 30, 75));
 
-        private void toolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            //Mostrar la forma
-            this.Show();
-        }
-
-        private void esconderToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //Esconder la forma 
-            this.Hide();
+            g.DrawRectangle(Pens.Red, new Rectangle(150, 100, 30, 75));
         }
     }
 }
