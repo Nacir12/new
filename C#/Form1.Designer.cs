@@ -1,4 +1,4 @@
-﻿namespace Programa_3._9
+﻿namespace Programa_4._9
 {
     partial class Form1
     {
@@ -28,78 +28,114 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.btnAbrirNotepad = new System.Windows.Forms.Button();
+            this.btnCerrarNotepad = new System.Windows.Forms.Button();
+            this.prcNotepad = new System.Diagnostics.Process();
+            this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mostrarStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.esconderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tableLayoutPanel1
+            // lblEstado
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.button2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.button3, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 13);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.5F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(200, 122);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Location = new System.Drawing.Point(50, 64);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(58, 13);
+            this.lblEstado.TabIndex = 0;
+            this.lblEstado.Text = "Esperando";
             // 
-            // button1
+            // btnAbrirNotepad
             // 
-            this.button1.Location = new System.Drawing.Point(3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnAbrirNotepad.Location = new System.Drawing.Point(204, 43);
+            this.btnAbrirNotepad.Name = "btnAbrirNotepad";
+            this.btnAbrirNotepad.Size = new System.Drawing.Size(100, 23);
+            this.btnAbrirNotepad.TabIndex = 1;
+            this.btnAbrirNotepad.Text = "Abrir Notepad";
+            this.btnAbrirNotepad.UseVisualStyleBackColor = true;
+            this.btnAbrirNotepad.Click += new System.EventHandler(this.btnAbrirNotepad_Click);
             // 
-            // button2
+            // btnCerrarNotepad
             // 
-            this.button2.Location = new System.Drawing.Point(3, 83);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnCerrarNotepad.Location = new System.Drawing.Point(204, 93);
+            this.btnCerrarNotepad.Name = "btnCerrarNotepad";
+            this.btnCerrarNotepad.Size = new System.Drawing.Size(100, 23);
+            this.btnCerrarNotepad.TabIndex = 2;
+            this.btnCerrarNotepad.Text = "Cerrar Notepad";
+            this.btnCerrarNotepad.UseVisualStyleBackColor = true;
+            this.btnCerrarNotepad.Click += new System.EventHandler(this.btnCerrarNotepad_Click);
             // 
-            // button3
+            // prcNotepad
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.button3, 2);
-            this.button3.Location = new System.Drawing.Point(3, 41);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(194, 24);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.prcNotepad.StartInfo.Domain = "";
+            this.prcNotepad.StartInfo.FileName = "notepad.exe";
+            this.prcNotepad.StartInfo.LoadUserProfile = false;
+            this.prcNotepad.StartInfo.Password = null;
+            this.prcNotepad.StartInfo.StandardErrorEncoding = null;
+            this.prcNotepad.StartInfo.StandardOutputEncoding = null;
+            this.prcNotepad.StartInfo.UserName = "";
+            this.prcNotepad.StartInfo.WorkingDirectory = "%system%\\system32";
+            this.prcNotepad.SynchronizingObject = this;
+            this.prcNotepad.Exited += new System.EventHandler(this.prcNotepad_Exited);
+            // 
+            // notifyIcon1
+            // 
+            this.notifyIcon1.ContextMenuStrip = this.contextMenuStrip1;
+            this.notifyIcon1.Text = "Abre aplicaciones";
+            this.notifyIcon1.Visible = true;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mostrarStripMenuItem2,
+            this.esconderToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 70);
+            // 
+            // mostrarStripMenuItem2
+            // 
+            this.mostrarStripMenuItem2.Name = "mostrarStripMenuItem2";
+            this.mostrarStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.mostrarStripMenuItem2.Text = "Mostrar";
+            this.mostrarStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click);
+            // 
+            // esconderToolStripMenuItem
+            // 
+            this.esconderToolStripMenuItem.Name = "esconderToolStripMenuItem";
+            this.esconderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.esconderToolStripMenuItem.Text = "Esconder";
+            this.esconderToolStripMenuItem.Click += new System.EventHandler(this.esconderToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 319);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.ClientSize = new System.Drawing.Size(338, 308);
+            this.Controls.Add(this.btnCerrarNotepad);
+            this.Controls.Add(this.btnAbrirNotepad);
+            this.Controls.Add(this.lblEstado);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblEstado;
+        private System.Windows.Forms.Button btnAbrirNotepad;
+        private System.Windows.Forms.Button btnCerrarNotepad;
+        private System.Diagnostics.Process prcNotepad;
+        private System.Windows.Forms.NotifyIcon notifyIcon1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem mostrarStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem esconderToolStripMenuItem;
     }
 }
 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Programa_3._9
+namespace Programa_4._9
 {
     public partial class Form1 : Form
     {
@@ -17,9 +17,41 @@ namespace Programa_3._9
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void btnAbrirNotepad_Click(object sender, EventArgs e)
         {
+            //Permite recibir eventos del notepad
+            prcNotepad.EnableRaisingEvents = true;
 
+            //Arrancamos el proces
+            prcNotepad.Start();
+
+            lblEstado.Text = "Notepad arrancado";
+        }
+
+        private void btnCerrarNotepad_Click(object sender, EventArgs e)
+        {
+            prcNotepad.Kill();
+        }
+
+        private void prcNotepad_Exited(object sender, EventArgs e)
+        {
+            
+            //Evento de cuando se cierra la forma
+            lblEstado.Text = "Notepad cerrado";
+
+            notifyIcon1.ShowBalloonTip(100, "Alert", "Notepad cerrado", ToolTipIcon.Info);
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            //Mostrar la forma
+            this.Show();
+        }
+
+        private void esconderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Esconder la forma 
+            this.Hide();
         }
     }
 }
